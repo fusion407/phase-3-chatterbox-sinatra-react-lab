@@ -6,14 +6,14 @@ function NewMessage({ currentUser, onAddMessage }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:4000/messages", {
+    fetch("http://localhost:9292/messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: currentUser.username,
         body: body,
+        username: currentUser.username,
       }),
     })
       .then((r) => r.json())
